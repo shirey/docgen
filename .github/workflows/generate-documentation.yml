@@ -9,9 +9,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: genshdoc result
-      run: echo "The result of genshdoc Action was ${{ steps.action-genshdoc.outputs.result }} > blech1.txt"
+      run: echo "The result of genshdoc Action was ${{ steps.action-genshdoc.outputs.result }}" > blech1.txt
     - name: echo result
-      run: echo "The result of genshdoc Action was ${{ steps.action-genshdoc.outputs.result }}
+      run: echo "The result of genshdoc Action was ${{ steps.action-genshdoc.outputs.result }}"
     - name: Commit files
       run: |
         echo ${{ github.ref }}
