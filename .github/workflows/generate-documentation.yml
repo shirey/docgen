@@ -13,13 +13,13 @@ jobs:
       with:
         ref: ${{ github.ref }}
         fetch-depth: 0
-	path: default
+        path: default
     - name: Checkout HuBMAP search-api
       uses: actions/checkout@v2
       with:
         repository: 'hubmapconsortium/search-api'
         fetch-depth: 0
-	path: search-api
+        path: search-api
     - name: setup python
       uses: actions/setup-python@v2
       with:
