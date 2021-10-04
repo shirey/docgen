@@ -1,7 +1,7 @@
 name: Generate Documentation
 
 on:
-  :push
+  push:
      branches:
        - test
 jobs:
@@ -10,6 +10,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
+        fetch-depth: 0
     - name: genshdoc result
       run: echo "The result of genshdoc Action was ${{ steps.action-genshdoc.outputs.result }}" > blech1.txt
     - name: echo result
@@ -25,3 +28,4 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
