@@ -11,7 +11,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
-        ref: #{{github.ref}}
+        ref: ${{github.ref}}
 	fetch-depth: 0
     - name: genshdoc result
       run: echo "The result of genshdoc Action was ${{ steps.action-genshdoc.outputs.result }}" > blech1.txt
