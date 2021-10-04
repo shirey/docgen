@@ -8,11 +8,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
+    - name: Checkout this repo
       uses: actions/checkout@v2
       with:
         ref: ${{ github.ref }}
         fetch-depth: 0
+    - name: Checkout HuBMAP search-api
+      uses: actions/checkout@v2
+      repository: 'hubmapconsortium/search-api'
+      fetch-depth: 0
     - name: setup python
       uses: actions/setup-python@v2
       with:
