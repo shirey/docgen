@@ -16,11 +16,11 @@ jobs:
       run: |
         echo ${{ github.ref }}
         git add .
-        git config --local user.email "shirey@pitt.edu"
-        git config --local user.name "Bill Shirey"
-        git commit -m "CI: Automated build push" -a | exit 0
+        git config --local user.email "generate-docs-workflow[bot]@github.com"
+        git config --local user.name "GenDocs Bot"
+        git commit -m "Automated Push by GenDocs Action" -a | exit 0
     - name: Push changes
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/test'
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
