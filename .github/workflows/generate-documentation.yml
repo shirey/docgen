@@ -13,6 +13,13 @@ jobs:
       with:
         ref: ${{ github.ref }}
         fetch-depth: 0
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: print info
+      run: |
+        python code-gen/info.py
     - name: genshdoc result
       run: echo "The result of genshdoc Action was ${{ steps.action-genshdoc.outputs.result }}" > blech1.txt
     - name: echo result
